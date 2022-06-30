@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<title>LPS</title>
+<meta charset="UTF-8">
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+body{font-family: "Sora", sans-serif}
+</style>
+<body>
+<!-- Header with full-height image -->
+<header class="w3-display-container" style="padding:128px 16px,back-ground colour:black" id="home">
+  <!--Navbar (sit on top)-->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <img src="/static/images/Free2.jpg" height="60" width="120">
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="calculator/" class="w3-bar-item w3-button"><i class="fa fa-th"></i> CALCULATOR</a>
+      <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-info-circle"></i>ABOUT</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+      <a href="#our goals" class="w3-bar-item w3-button"><i class="fa fa-star"></i> GOALS</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#our goals" onclick="w3_close()" class="w3-bar-item w3-button">GOALS</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+  <section class="section">
+      <div class="container" >
+        <div class="content">
+          <h1>Loan Calculator</h1>
+          <p>
+            Stop wasting don't wast valuable time,<br>Check your best loan amount you want to get.<br/>
+          </p>
+        </div>
+
+        <div class="columns">
+          <div class="column is-three-quarters">
+            <div class="card">
+              <div class="card-content">
+                <form id="loan-form">
+                  <div class="level">
+                    <!-- Left side -->
+                    <div class="level-left is-marginless">
+                      <div class="level-item">
+                        <p class="number">1</p>
+                        Loan Amount
+                      </div>
+                    </div>
+
+                    <!-- Right side -->
+                    <div class="level-right">
+                      <div class="level-item">
+                        <div class="field">
+                          <div class="control has-icons-left ">
+                            <input class="input" id="amount" type="number" />
+                            <span class="icon is-small is-left">
+                              <i class="fa fa-rupee-sign"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="level">
+                    <!-- Left side -->
+                    <div class="level-left is-marginless">
+                      <div class="level-item">
+                        <p class="number">2</p>
+                        Interest Rate
+                      </div>
+                    </div>
+
+                    <!-- Right side -->
+                    <div class="level-right">
+                      <div class="level-item">
+                        <div class="field">
+                          <div class="control has-icons-left">
+                            <input class="input" id="interest" type="number" />
+                            <span class="icon is-small is-left">
+                              <i class="fa fa-percentage"></i>
+
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="level">
+                    <!-- Left side -->
+                    <div class="level-left is-marginless">
+                      <div class="level-item">
+                        <p class="number">3</p>
+                        Number Of Years
+                      </div>
+                    </div>
+
+                    <!-- Right side -->
+                    <div class="level-right">
+                      <div class="level-item">
+                        <div class="field">
+                          <div class="control has-icons-left">
+                            <input class="input" id="years" type="number" />
+                            <span class="icon is-small is-left">
+                              <i class="fa fa-calendar"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="control">
+                    <button
+                      class="button is-large is-fullwidth is-primary is-outlined">
+                      Calculate
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+    <!-- RESULTS -->
+    <section class="section">
+      <h1 class="title ">Calculated Results</h1>
+<div class="columns is-multiline">
+
+  <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+    <div class="notification is-primary has-text">
+      <p id="monthlyPayment" class="title is-1">₹</p>
+      <p class="subtitle is-4">Monthly Payments</p>
+    </div>
+  </div>
+
+    <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+        <div class="notification is-info has-text">
+          <p id="totalInterest" class="title is-1">%</p>
+          <p class="subtitle is-4">Total Interest</p>
+        </div>
+      </div>
+
+      <div class="column is-12-tablet is-6-desktop is-3-widescreen">
+        <div class="notification is-link has-text">
+          <p id="totalPayment" class="title is-1">₹</p>
+          <p class="subtitle is-4">Total Amount</p>
+        </div>
+      </div>
+
+</div>
+</section>
+  <script>
+  // Listen for submit
+
+document.getElementById("loan-form").addEventListener("submit", computeResults);
+
+function computeResults(e) {
+  // UI
+
+  const UIamount = document.getElementById("amount").value;
+  const UIinterest = document.getElementById("interest").value;
+  const UIyears = document.getElementById("years").value;
+
+  // Calculate
+
+  const principal = parseFloat(UIamount);
+  const CalculateInterest = parseFloat(UIinterest) / 100 / 12;
+  const calculatedPayments = parseFloat(UIyears) * 12;
+
+  //Compute monthly Payment
+
+  const x = Math.pow(1 + CalculateInterest, calculatedPayments);
+  const monthly = (principal * x * CalculateInterest) / (x - 1);
+  const monthlyPayment = monthly.toFixed(2);
+
+  //Compute Interest
+
+  const totalInterest = (monthly * calculatedPayments - principal).toFixed(2);
+
+  //Compute Total Payment
+
+  const totalPayment = (monthly * calculatedPayments).toFixed(2);
+
+  //Show results
+
+  document.getElementById("monthlyPayment").innerHTML = "₹" + monthlyPayment;
+
+  document.getElementById("totalInterest").innerHTML = "%" + totalInterest;
+
+  document.getElementById("totalPayment").innerHTML = "₹" + totalPayment;
+
+  e.preventDefault();
+}
+</script>
+</header>
+
+<!-- About Section -->
+<div class="w3-container-gray w3-dark-grey" style="padding:120px 10px,back-ground colour:gray" id="about">
+  <h1 class="w3-center my-5 "><b>ABOUT US</b></h1>
+  <h2 class="w3-center my-2 w3-large">Key features and Services</h2>
+  <div class="w3-row-padding w3-center" style="margin-top:100px">
+    <div class="w3-quarter">
+      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Financial</p>
+      <p>Finance is a term for matters regarding the management, creation, and study of money and investments. Specifically, it deals with the questions of how and why an individual, company or government acquire the money needed – called capital in the company context – and how they spend or invest that money</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-fingerprint w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Security</p>
+      <p>Security is freedom from, or resilience against, potential harm caused by others. Beneficiaries of security may be of persons and social groups, objects and institutions, ecosystems or any other entity or phenomenon vulnerable to unwanted change.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-user-shield w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Data Privacy</p>
+      <p>Information privacy is the relationship between the collection and dissemination of data, technology, the public expectation of privacy, and the legal and political issues surrounding them. It is also known as data privacy or data protection</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Support</p>
+      <p>Basi understanding and esay solution to get important results from our best features and Prediction.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Team Section -->
+<div class="w3-container" style="padding:20px 10px" id="team">
+  <h1 class="my-8 text-center"><b>THE TEAM</b></h1>
+  <p class="w3-center w3-large">The ones who runs this company</p>
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <center><img src= "/static/images/Yash.jpg" width="90" height="200"/>
+        </center>
+        <div class="w3-container">
+          <h3>YASH RATHOD</h3>
+          <p class="w3-opacity">CEO & Founder</p>
+          <p>work is my passion</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l4 m4 w3-margin-bottom">
+      <div class="w3-card">
+        <center>
+          <img src="/static/images/Ramani.jpg" width="90" height="200"/>
+        </center>
+        <div class="w3-container">
+          <h3>YASH RAMANI</h3>
+          <p class="w3-opacity">Director</p>
+          <p>opportunities are always change but mindset is constant.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <center>
+          <img src="/static/images/samir.jpg" width="90" height="200"/>
+        </center>
+        <div class="w3-container">
+          <h3>SAMIR RATHOD</h3>
+          <p class="w3-opacity">Web Designer</p>
+          <p>Support is just a thing, But its Matters.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Promo Section "Statistics" -->
+<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">14+</span>
+    <br>Loan Types
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">55+</span>
+    <br>Banks
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">89+</span>
+    <br>Experts
+  </div>
+  <div class="w3-quarter">
+    <span class="w3-xxlarge">150+</span>
+    <br>Happy Clients
+  </div>
+</div>
+
+<!-- our goals Section -->
+<div class="w3-container w3-light-grey w3-padding-64" style="padding:128px 16px" id="our goals">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h3>Our Goals.</h3>
+      <p>You loan your friend money. You see them again, they don't say nothing<br>
+        about the money.Hi, how ya doing? How's ya mama doing? Man, how's my money doing?</p>
+      <p>A winner is someone who recognizes his God-given talents, works his tail<br>
+        off to develop them into skills, and uses these skills to accomplish his goals.</p>
+    </div>
+    <div class="w3-col m6">
+      <p class="w3-wide"><i class="fa fa-lock w3-margin-right"></i>Security</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:90%">90%</div>
+      </div>
+      <p class="w3-wide"><i class="fa fa-user-shield w3-margin-right"></i>Data sequrity</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:85%">85%</div>
+      </div>
+      <p class="w3-wide"><i class="fa fa-check w3-margin-right"></i>Verify</p>
+      <div class="w3-grey">
+        <div class="w3-container w3-dark-grey w3-center" style="width:75%">75%</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-container w3-dark-wite" style="padding:20px 16px" id="contact">
+  <h1 class="w3-center" >CONTACT</h1>
+  <p class="w3-center ">Lets get in touch. Send us a message:</p>
+  <div style="margin-top:40px">
+    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Ahmedabad, Gujarat, India🌎</p>
+    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +91 7600467722</p>
+    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: yash30389@mail.com</p>
+    <br>
+      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-black" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <p>Design by :-<a class="w3-hover-text-green">Leecharch Tech Soft&copy;2020–2021</a></p>
+</footer>
+
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+</body>
