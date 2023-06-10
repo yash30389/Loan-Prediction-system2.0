@@ -1,10 +1,10 @@
 from django import forms
 from .models import approvals
 
-# class approvalModelForm(forms.ModelForm):
-#     class Meta:
-#         model = approvals
-#         fields = "__all__"
+class approvalModelForm(forms.ModelForm):
+    class Meta:
+        model = approvals
+        fields = "__all__"
 
 class approvalForm(forms.Form):
     firstname = forms.CharField(label='First Name', max_length=20, widget=forms.TextInput(attrs={'placeholder': 'Enter Firstname'}))
@@ -21,3 +21,16 @@ class approvalForm(forms.Form):
     Self_Employed = forms.ChoiceField(label='Self Employed', choices=[('Yes', 'Yes'), ('No', 'No')])
     Property_Area = forms.ChoiceField(label='Property Area', choices=[('Rural', 'Rural'), ('Semiurban', 'Semiurban'), ('Urban', 'Urban')])
 
+# class SignupForm(forms.Form):
+#     username = forms.CharField(label='Username', max_length=100)
+#     email = forms.EmailField(label='Email')
+#     password = forms.CharField(widget=forms.PasswordInput)
+#     password_confirm = forms.CharField(widget=forms.PasswordInput, label='Confirm password')
+
+#     def clean(self):
+#         cleaned_data = super().clean()
+#         password = cleaned_data.get("password")
+#         password_confirm = cleaned_data.get("password_confirm")
+
+#         if password != password_confirm:
+#             raise forms.ValidationError("Passwords do not match")

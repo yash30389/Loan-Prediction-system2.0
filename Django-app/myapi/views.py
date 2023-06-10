@@ -21,6 +21,7 @@ from .forms import approvalForm
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
+from .forms import SignupForm
 
 
 class approvalView(viewsets.ModelViewSet):
@@ -126,8 +127,6 @@ def cxcontact(request):
     return render(request, 'myform/cxform.html', {'form': form, 'postFlag': postFlag})
 
 
-# password for test name=samir password=samir@1234
-
 def home(request):
     return render(request, 'index.html')
 
@@ -135,6 +134,15 @@ def home(request):
 def login(request):
     return render(request,'login.html')
 
+# def signup(request):
+#     if request.method == 'POST':
+#         form = SignupForm(request.POST)
+#         if form.is_valid():
+#             # handle the signup process (e.g. create a user and log them in)
+#             return redirect('home')
+#     else:
+#         form = SignupForm()
+#     return render(request, 'signup.html', {'form': form})
 
 def signup(request):
     if request.method == 'POST':
@@ -150,8 +158,5 @@ def signup(request):
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
 
-
 def lognout(request):
     return render(request, 'index.html')
-
-

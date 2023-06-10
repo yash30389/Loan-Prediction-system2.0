@@ -23,3 +23,13 @@ To run the web service, go inside the Django-app directory and run the following
 > python manage.py migrate<br>
 > python manage.py runserver<br>
 <br>
+
+=========================================================
+# password for test name=samir password=samir@1234
+
+=========================================================
+super admin password
+---------------------------------------------------------
+yash30389@gmail.com
+yash@1234
+---------------------------------------------------------
